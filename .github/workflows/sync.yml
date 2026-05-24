@@ -1,0 +1,19 @@
+name: Sync to Hugging Face space
+on:
+  push:
+    branches: [ main ]
+  default:
+    types: [create]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Push to hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push https://TANUTPHABJANDA03:$HF_TOKEN@huggingface.co/spaces/Tanut2003/FitBite-CleanFood main
