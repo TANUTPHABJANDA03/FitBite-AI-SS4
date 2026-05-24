@@ -6,7 +6,7 @@ from google.genai import types
 # 1. ตั้งค่าหน้าตาของแอปพลิเคชัน (UI Configuration)
 st.set_page_config(page_title="FitBite AI - Smart Order", page_icon="🥗", layout="centered")
 
-# สร้างและเตรียม session_state ไว้ตั้งแต่แรกสุด ป้องกันเออร์เรอร์แดงบนหน้าเว็บ
+# [แก้ไข] ย้ายการสร้าง session_state มาไว้บนสุดทันทีหลังจากตั้งค่าหน้าเว็บ เพื่อป้องกันการเรียกหาแล้วไม่เจอ
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
