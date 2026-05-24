@@ -2,8 +2,6 @@ name: Sync to Hugging Face space
 on:
   push:
     branches: [ main ]
-  default:
-    types: [create]
 
 jobs:
   deploy:
